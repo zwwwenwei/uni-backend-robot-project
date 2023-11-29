@@ -1,0 +1,607 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>sit331_4.2</name>
+    </assembly>
+    <members>
+        <member name="M:sit331_4._2.UsersController.GetAllUsermodels">
+             <summary>
+             Get a user model.
+             </summary>
+             <param>Get user model from the HTTP request.</param>
+             <returns>user model</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/users
+             {
+             {
+                "id": 1,
+                "email": "a@gmail.com",
+                "firstname": "aa",
+                "lastname": "aa",
+                "passwordhash": "abc",
+                "createdDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-15T01:43:30.248298",
+                "description": null,
+                "role": null
+             },
+             {
+                "id": 2,
+                "email": "b@gmail.com",
+                "firstname": "bb",
+                "lastname": "bb",
+                "passwordhash": "cde",
+                "createdDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-15T01:43:30.248298",
+                "description": null,
+                "role": null
+            },
+            {
+                "id": 3,
+                "email": "c@gmail.com",
+                "firstname": "cc",
+                "lastname": "cc",
+                "passwordhash": "efg",
+                "createdDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-15T01:43:30.248298",
+                "description": null,
+                "role": null
+            }
+             }
+            
+             </remarks>
+             <response code="201">Returns the user model</response>
+             <response code="400">If the user model is null</response>
+             <response code="409">If a user model with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._2.UsersController.GetusermodelByAdmin(System.String)">
+             <summary>
+             Get a user model id.
+             </summary>
+             <param name="role">Get user id from the HTTP request.</param>
+             <returns>user model id</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/users/id
+             {
+             {
+                "id": 2,
+                "email": "b@gmail.com",
+                "firstname": "bb",
+                "lastname": "bb",
+                "passwordhash": "cde",
+                "createdDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-15T01:43:30.248298",
+                "description": null,
+                "role": null
+             },
+             }
+            
+             </remarks>
+             <response code="201">Returns the selected user model</response>
+             <response code="400">If the user model is null</response>
+             <response code="409">If a user model with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._2.UsersController.GetusermodelByID(System.Int32)">
+             <summary>
+             Get a user model id.
+             </summary>
+             <param name="id">Get user id from the HTTP request.</param>
+             <returns>user model id</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/users/id
+             {
+             {
+                "id": 2,
+                "email": "b@gmail.com",
+                "firstname": "bb",
+                "lastname": "bb",
+                "passwordhash": "cde",
+                "createdDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-15T01:43:30.248298",
+                "description": null,
+                "role": null
+             },
+             }
+            
+             </remarks>
+             <response code="201">Returns the selected user model</response>
+             <response code="400">If the user model is null</response>
+             <response code="409">If a user model with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._2.UsersController.AddUsermodel(sit331_4._2.UserModel)">
+             <summary>
+             Creates a user model.
+             </summary>
+             <param name="newUser">A new user model from the HTTP request.</param>
+             <returns>A newly created user model</returns>
+             <remarks>
+             Sample request:
+            
+             POST /api/users
+             {
+                "email": "e@gmail.com",
+                "firstname": "ee",
+                "lastname": "ee",
+                "passwordhash": "cgb",
+                "description": ee ee e@gmail.com,
+                "role": user
+             }
+            
+             </remarks>
+             <response code="201">Returns the newly created robot command</response>
+             <response code="400">If the robot command is null</response>
+             <response code="409">If a robot command with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._2.UsersController.UpdateUsermodel(System.Int32,sit331_4._2.UserModel)">
+             <summary>
+             Update a user model.
+             </summary>
+             <param name="updateUser">Update a user model from the HTTP request.</param>
+             <param name="id">Select a user id</param>
+             <returns>A updated user model</returns>
+             <remarks>
+             Sample request:
+            
+             PUT /api/users/id
+             {
+             "id": 4,
+             "email": "d@gmail.com",
+                "firstname": "dd",
+                "lastname": "dd",
+                "passwordhash": "cde",
+                "description": dd dd d@gmail.com,
+                "role": null
+             "createDate": "0001-01-01T00:00:00",
+             "modifiedDate": "2023-05-19T23:56:13.88429",
+             "description": null
+             }
+            
+             </remarks>
+             <response code="201">Returns the updated user model</response>
+             <response code="400">If the user model is null</response>
+             <response code="409">If a user model with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._2.UsersController.DeleteUsermodel(System.Int32)">
+             <summary>
+             Delete a user model.
+             </summary>
+             <param name="id">Selete an id and Delete a user model from the HTTP request.</param>
+             <returns>Deleted user model</returns>
+             <remarks>
+             Sample request:
+            
+             DELETE /api/users/id
+             {
+             }
+            
+             </remarks>
+             <response code="201">Returns the deleted user model</response>
+             <response code="400">If the user model is null</response>
+             <response code="409">If a user model with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._2.UsersController.UpdateEmailPassword(sit331_4._2.LoginModel)">
+             <summary>
+             Update a user model.
+             </summary>
+             <param name="updatelogin">Update a user model from the HTTP request.</param>
+             <returns>A updated user model</returns>
+             <remarks>
+             Sample request:
+            
+             PUT /api/users/id
+             {
+             "id": 4,
+             "email": "d@gmail.com",
+                "firstname": "dd",
+                "lastname": "dd",
+                "passwordhash": "cde",
+                "description": dd dd d@gmail.com,
+                "role": null
+             "createDate": "0001-01-01T00:00:00",
+             "modifiedDate": "2023-05-19T23:56:13.88429",
+             "description": null
+             }
+            
+             </remarks>
+             <response code="201">Returns the updated user model</response>
+             <response code="400">If the user model is null</response>
+             <response code="409">If a user model with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.MapsController.GetAllMap">
+             <summary>
+             Get a map.
+             </summary>
+             <param>Get maps from the HTTP request.</param>
+             <returns>maps</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/maps
+             {
+             {
+                "id": 1,
+                "columns": 351,
+                "rows": 406,
+                "name": "LEFT",
+                "description": null,
+                "createdDate": "2022-07-30T00:00:00",
+                "modifiedDate": "2022-07-30T00:00:00"
+            },
+            {
+                "id": 1,
+                "columns": 5,
+                "rows": 5,
+                "name": "LEFT",
+                "description": null,
+                "createdDate": "2023-05-15T12:22:48.831512",
+                "modifiedDate": "2023-05-15T12:22:48.831515"
+            },
+            {
+            "id": 3,
+                "columns": 100,
+                "rows": 100,
+                "name": "GO",
+                "description": null,
+                "createdDate": "2023-05-15T13:21:32.659911",
+                "modifiedDate": "2023-05-15T13:21:32.659916"
+            },
+            {
+            "id": 2,
+                "columns": 10,
+                "rows": 10,
+                "name": "GO",
+                "description": null,
+                "createdDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-19T15:09:34.247326"
+            }
+             }
+            
+             </remarks>
+             <response code="201">Returns the map</response>
+             <response code="400">If the map is null</response>
+             <response code="409">If a map with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.MapsController.GetmapsquareOnly">
+             <summary>
+             Get a map.
+             </summary>
+             <param>Get maps from the HTTP request.</param>
+             <returns>maps</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/maps
+             {
+            "id":1,
+            "columns":2,
+            "rows":2,
+            "name":"LEFT",
+            "description":null,
+            "createdDate":"2023-05-20T00:09:33.5143544+10:00",
+            "modifiedDate":"2023-05-20T00:09:33.5144588+10:00"
+            },
+            {
+            "id":2,
+            "columns":2,
+            "rows":2,
+            "name":"RIGHT",
+            "description":null,
+            "createdDate":"2023-05-20T00:09:33.5144635+10:00",
+            "modifiedDate":"2023-05-20T00:09:33.5144645+10:00"
+            },
+            {
+            "id":3,
+            "columns":2,
+            "rows":2,
+            "name":"PLACE",
+            "description":null,
+            "createdDate":"2023-05-20T00:09:33.5144687+10:00",
+            "modifiedDate":"2023-05-20T00:09:33.5144703+10:00"}
+             }
+            
+             </remarks>
+             <response code="201">Returns the map</response>
+             <response code="400">If the map is null</response>
+             <response code="409">If a map with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.MapsController.GetMapByID(System.Int32)">
+             <summary>
+             Get a map id.
+             </summary>
+             <param>Get maps id from the HTTP request.</param>
+             <returns>select maps id</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/maps/id
+            {
+            "id": 2,
+            "columns": 2,
+            "rows": 2,
+            "name": "RIGHT",
+            "description": null,
+            "createdDate": "2023-05-20T00:09:33.5144635+10:00",
+            "modifiedDate": "2023-05-20T00:09:33.5144645+10:00"
+             }
+             </remarks>
+             <response code="201">Returns the map</response>
+             <response code="400">If the map is null</response>
+             <response code="409">If a map with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.MapsController.AddMap(sit331_4._1.Map)">
+             <summary>
+             Creates a map.
+             </summary>
+             <param name="newMap">A new map from the HTTP request.</param>
+             <returns>A newly map</returns>
+             <remarks>
+             Sample request:
+            
+             POST /api/robot-commands
+             {
+             "name": "DANCE",
+             "isMoveCommand": true,
+             "description": "Salsa on the Moon"
+             }
+            
+             </remarks>
+             <response code="201">Returns the newly created map</response>
+             <response code="400">If the map is null</response>
+             <response code="409">If a map with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.MapsController.UpdateMap(System.Int32,sit331_4._1.Map)">
+             <summary>
+             update a map.
+             </summary>
+             <param name="updatemap">A updated map from the HTTP request.</param>
+             <param name="id">Select map id</param>
+             <returns>A updated map</returns>
+             <remarks>
+             Sample request:
+            
+             PUT /api/robot-commands/id
+            {
+            "id": 2,
+            "columns": 10,
+            "rows": 10,
+            "name": "GO"
+             }
+             </remarks>
+             <response code="201">Returns the update map</response>
+             <response code="400">If the map is null</response>
+             <response code="409">If a map with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.MapsController.DeleteMap(System.Int32)">
+             <summary>
+             delete a map.
+             </summary>
+             <param name="id">Select a map and delete</param>
+             <returns>A deleted map</returns>
+             <remarks>
+             Sample request:
+            
+             DELETE /api/robot-commands/id
+             {
+             }
+             </remarks>
+             <response code="201">Returns the delete map</response>
+             <response code="400">If the map is null</response>
+             <response code="409">If a map with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.MapsController.CheckCoordinate(System.Int32,System.Int32,System.Int32)">
+             <summary>
+             check a map.
+             </summary>
+             <param name="id">Select a map and check</param>
+             <param name="x">row</param>
+             <param name="y">column</param>
+             <returns>A deleted map</returns>
+             <remarks>
+             Sample request:
+            
+             DELETE /api/robot-commands/id
+             {
+             true
+             }
+             </remarks>
+             <response code="201">Returns the map</response>
+             <response code="400">If the map is null</response>
+             <response code="409">If a map with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.RobotCommandsController.GetAllRobotCommands">
+             <summary>
+             Get a robot command.
+             </summary>
+             <param>Get robot command from the HTTP request.</param>
+             <returns>robot command</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/robot-commands
+             {
+             {
+             id": 2,
+            "name": "UP",
+            "isMoveCommand": false,
+            "createDate": "0001-01-01T00:00:00",
+            "modifiedDate": "2023-05-15T01:43:30.248298",
+            "description": null
+             },
+             {
+                "id": 4,
+                "name": "BACK",
+                "isMoveCommand": false,
+                "createDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-15T11:30:35.926674",
+                "description": null
+            },
+            {
+                "id": 7,
+                "name": "DOWN",
+                "isMoveCommand": false,
+                "createDate": "0001-01-01T00:00:00",
+                "modifiedDate": "2023-05-15T13:36:00.049734",
+                "description": null
+            }
+             }
+            
+             </remarks>
+             <response code="201">Returns the robot command</response>
+             <response code="400">If the robot command is null</response>
+             <response code="409">If a robot command with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.RobotCommandsController.GetMoveRobotCommandsOnly">
+             <summary>
+             Get robot command move.
+             </summary>
+             <param>Get command move from the HTTP request.</param>
+             <returns>robot command move</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/robot-commands/move
+             {
+             {
+             "id":1,
+             "name":"LEFT",
+             "isMoveCommand":true,
+             "createDate":"2023-05-19T23:39:41.9203375+10:00",
+             "modifiedDate":"2023-05-19T23:39:41.9203488+10:00",
+             "description":null
+             },
+             {
+             "id":2,
+             "name":"RIGHT",
+             "isMoveCommand":true,
+             "createDate":"2023-05-19T23:39:41.9207616+10:00",
+             "modifiedDate":"2023-05-19T23:39:41.9207638+10:00",
+             "description":null
+             },
+             {
+             "id":3,
+             "name":"MOVE",
+             "isMoveCommand":true,
+             "createDate":"2023-05-19T23:39:41.9207645+10:00",
+             "modifiedDate":"2023-05-19T23:39:41.9207649+10:00",
+             "description":null
+             },
+             {
+             "id":4,
+             "name":"PLACE",
+             "isMoveCommand":true,
+             "createDate":"2023-05-19T23:39:41.920768+10:00",
+             "modifiedDate":"2023-05-19T23:39:41.9207683+10:00",
+             "description":null
+             },
+             {
+             "id":5,
+             "name":"REPORT",
+             "isMoveCommand":true,
+             "createDate":"2023-05-19T23:39:41.9207686+10:00",
+             "modifiedDate":"2023-05-19T23:39:41.9207688+10:00",
+             "description":null
+             }
+             }
+            
+             </remarks>
+             <response code="201">Returns the robot command</response>
+             <response code="400">If the robot command is null</response>
+             <response code="409">If a robot command with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.RobotCommandsController.GetRobotCommandByID(System.Int32)">
+             <summary>
+             Get a robot command id.
+             </summary>
+             <param name="id">Get command id from the HTTP request.</param>
+             <returns>robot command id</returns>
+             <remarks>
+             Sample request:
+            
+             GET /api/robot-commands/id
+             {
+             {
+             id": 2,
+            "name": "UP",
+            "isMoveCommand": false,
+            "createDate": "0001-01-01T00:00:00",
+            "modifiedDate": "2023-05-15T01:43:30.248298",
+            "description": null
+             },
+             }
+            
+             </remarks>
+             <response code="201">Returns the selected robot command</response>
+             <response code="400">If the robot command is null</response>
+             <response code="409">If a robot command with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.RobotCommandsController.AddRobotCommand(sit331_4._1.RobotCommand)">
+             <summary>
+             Creates a robot command.
+             </summary>
+             <param name="newCommand">A new robot command from the HTTP request.</param>
+             <returns>A newly created robot command</returns>
+             <remarks>
+             Sample request:
+            
+             POST /api/robot-commands
+             {
+             "name": "DANCE",
+             "isMoveCommand": true,
+             "description": "Salsa on the Moon"
+             }
+            
+             </remarks>
+             <response code="201">Returns the newly created robot command</response>
+             <response code="400">If the robot command is null</response>
+             <response code="409">If a robot command with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.RobotCommandsController.UpdateRobotCommand(System.Int32,sit331_4._1.RobotCommand)">
+             <summary>
+             Update a robot command.
+             </summary>
+             <param name="updateCommand">Update a robot command from the HTTP request.</param>
+             <param name="id">Select a robot id</param>
+             <returns>A updated robot command</returns>
+             <remarks>
+             Sample request:
+            
+             PUT /api/robot-commands/id
+             {
+             "id": 7,
+            "name": "DOWN",
+            "isMoveCommand": false,
+            "createDate": "0001-01-01T00:00:00",
+            "modifiedDate": "2023-05-19T23:56:13.88429",
+            "description": null
+             }
+            
+             </remarks>
+             <response code="201">Returns the updated robot command</response>
+             <response code="400">If the robot command is null</response>
+             <response code="409">If a robot command with the same name already exists.</response>
+        </member>
+        <member name="M:sit331_4._1.RobotCommandsController.DeleteRobotCommand(System.Int32)">
+             <summary>
+             Delete a robot command.
+             </summary>
+             <param name="id">Selete an id and Delete a robot command from the HTTP request.</param>
+             <returns>Deleted robot command</returns>
+             <remarks>
+             Sample request:
+            
+             DELETE /api/robot-commands/id
+             {
+             }
+            
+             </remarks>
+             <response code="201">Returns the deleted robot command</response>
+             <response code="400">If the robot command is null</response>
+             <response code="409">If a robot command with the same name already exists.</response>
+        </member>
+    </members>
+</doc>
